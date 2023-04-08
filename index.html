@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 배경 -->
+    <video class="full-screen-vid" autoplay muted loop src="./video/bg-video.mp4">
+    </video>
+    <!-- 시계 -->
+    <header class="header">
+        <h1 id="clock"></h1>
+    </header>
+    <!-- To Do List -->
+    <main class="main-container">
+        <h2 class="title">To Do List</h2>
+        <form class="input-container">
+            <input type="text" id="input-todo" placeholder="Add to your list" onkeyup="enterKey()">
+            <label class="a11y-hidden">To Do List 입력</label>
+            <button type="submit" class="input-btn">Add</button>
+        </form>
+        <ul class="todo-container">
+            <!-- JS 처리 -->
+        </ul>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+@font-face {
+  font-family: "KyoboHandwriting2021sjy";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "KyoboHandwriting2021sjy";
+  font-size: 1.5rem;
+  margin: 0 12px;
+}
+
+h1,
+h2,
+span,
+button,
+p,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+input {
+  all: unset;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.a11y-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+/* background video */
+.full-screen-vid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  opacity: 0.5;
+}
+
+/* header */
+.header {
+  text-align: center;
+}
+
+#clock {
+  font-size: 5rem;
+  text-align: center;
+  margin: 2rem 0;
+  line-height: 1.2;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+/* main */
+.main-container {
+  background: #fff;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  border: 2px solid #eee;
+  padding: 0.7rem 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+.input-container {
+  margin: 1.5rem auto;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  border: 2px solid #777;
+  border-radius: 10px;
+  padding: 0.7rem;
+}
+
+#input-todo {
+  flex: 1;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: left;
+  background-color: #fff;
+  padding-left: 0.3rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.input-btn {
+  padding: 0.3rem;
+  font-size: 1.3rem;
+  border: 2px solid #999;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}
+
+.input-btn:hover {
+  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  padding: 0.2rem 0.5rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+}
+
+.checkbox {
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+}
+
+.todo-text {
+  flex: 1;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  transition: text-decoration, 0.3s linear;
+  -webkit-transition: text-decoration, 0.3s linear;
+  -moz-transition: text-decoration, 0.3s linear;
+  -ms-transition: text-decoration, 0.3s linear;
+  -o-transition: text-decoration, 0.3s linear;
+  background-color: #fff;
+  padding: 0 4rem 0 0.4rem;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.checkbox:checked {
+  background: limegreen;
+}
+
+.checkbox:checked + .todo-text {
+  text-decoration: #000 line-through;
+  color: #777;
+}
+
+.delete-btn {
+  cursor: pointer;
+  transition: color 0.3s;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  background-color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  right: 0.6rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+.delete-btn::before {
+  content: " ";
+  width: 1px;
+  margin-right: 0.4rem;
+}
+
+.todo:nth-child(odd) {
+  border-color: salmon;
+  color: salmon;
+  background-color: salmon;
+}
+
+.todo:nth-child(odd) .delete-btn::before {
+  border: 1px solid salmon;
+}
+
+.todo:nth-child(even) {
+  border-color: skyblue;
+  color: skyblue;
+  background-color: skyblue;
+}
+
+.todo:nth-child(even) .delete-btn::before {
+  border: 1px solid skyblue;
+}
+
+.todo + .todo {
+  margin-top: 0.5rem;
+}
