@@ -8,36 +8,28 @@ let todoArray = [];
 
 function makeToDo(text) {
   const todo = document.createElement("li");
-  const checkbox = document.createElement("input");
   const todoText = document.createElement("p");
-  const label = document.createElement("label");
   const btn = document.createElement("button");
   const id = todoArray.length + 1;
 
   todo.setAttribute("class", "todo");
   todo.setAttribute("id", id);
-  checkbox.setAttribute("type", "checkbox");
-  checkbox.setAttribute("class", "checkbox");
-  checkbox.setAttribute("id", `checkbox${id}`);
   todoText.setAttribute("class", "todo-text");
-  label.setAttribute("for", "checkbox");
-  label.setAttribute("class", "a11y-hidden");
   btn.setAttribute("class", "delete-btn");
   btn.setAttribute("type", "button");
-  btn.addEventListener("click", deleteTodo);
+  btn.addEventListener("click", doneTodo);
 
   todoText.textContent = text;
-  btn.textContent = "Delete";
+  btn.textContent = "Done";
 
-  todo.appendChild(checkbox);
   todo.appendChild(todoText);
-  todo.appendChild(label);
   todo.appendChild(btn);
   todoList.appendChild(todo);
 
   const todoObj = {
     id: id,
     text: text,
+    checked: false,
   };
 
   todoArray.push(todoObj);
@@ -77,11 +69,20 @@ function enterKey() {
   }
 }
 
+function doneTodo(e) {
+  const done = confirm(
+    "할 일을 끝내셨나요? 확인을 누르면 리스트에서 지워집니다."
+  );
+  if (done) {
+    deleteTodo(e);
+  } else {
+    return;
+  }
+}
+
 function deleteTodo(e) {
   const btn = e.target;
   const todo = btn.parentNode;
-  console.log(todo);
-  console.log(todo.id);
   todoList.removeChild(todo);
   const cleanTodo = todoArray.filter(function (todoIndex) {
     return todoIndex.id !== parseInt(todo.id);
