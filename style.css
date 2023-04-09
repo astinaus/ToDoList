@@ -176,20 +176,6 @@ a {
   position: relative;
 }
 
-.checkbox {
-  width: 0.7rem;
-  height: 0.7rem;
-  border: 1px solid #666;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  transition: all 0.3s linear;
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  -ms-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-}
-
 .todo-text {
   flex: 1;
   font-size: 1.3rem;
@@ -211,15 +197,6 @@ a {
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-}
-
-.checkbox:checked {
-  background: limegreen;
-}
-
-.checkbox:checked + .todo-text {
-  text-decoration: #000 line-through;
-  color: #777;
 }
 
 .delete-btn {
