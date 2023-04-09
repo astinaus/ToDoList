@@ -12,7 +12,6 @@
 
 body {
   font-family: "KyoboHandwriting2021sjy";
-  font-size: 1.5rem;
   margin: 0 12px;
 }
 
@@ -65,12 +64,11 @@ a {
   position: fixed;
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 100%;
   z-index: -100;
   opacity: 0.5;
+  object-fit: cover;
 }
 
 /* header */
@@ -245,5 +243,22 @@ a {
 }
 
 .todo + .todo {
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.todo-container {
+  margin-bottom: 4px;
+}
+
+/* 반응형 */
+@media (max-width: 540px) {
+  #clock {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 430px) {
+  #clock {
+    font-size: 3rem;
+  }
 }
