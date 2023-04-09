@@ -29,7 +29,6 @@ function makeToDo(text) {
   const todoObj = {
     id: id,
     text: text,
-    checked: false,
   };
 
   todoArray.push(todoObj);
@@ -65,7 +64,7 @@ function getTime() {
 
 function enterKey() {
   if (window.event.keyCode == 13) {
-    handleSubmit();
+    form.addEventListener("submit", handleSubmit);
   }
 }
 
